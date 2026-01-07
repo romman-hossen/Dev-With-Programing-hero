@@ -1,0 +1,39 @@
+/* task 1 */
+.leora{
+    background-color: aqua;
+}
+
+/* task 3 */
+*{
+    background-color: #f8f6f6;
+    
+}
+#uniqe{
+    color: brown;
+    background-color: rgb(202, 196, 196);
+    height: 400px;
+    text-align: center;
+    padding-top: 400px;
+
+}
+.select{
+    color: bisque;
+    font-size: 20px;
+}
+/* task 4 */
+.course ,li{
+    margin-top: 50px;
+    margin-left: 70px;
+    color: black;
+    font-size: larger;
+    border: 2px dotted rebeccapurple;
+    border-right: none;
+    padding: 60px;
+
+}
+.background{
+    background-image: url(../pratice_project/Screenshot\ 2025-04-30\ 150650.png);
+    font-size: 50px;
+}
+
+

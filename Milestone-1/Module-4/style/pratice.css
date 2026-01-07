@@ -1,0 +1,15 @@
+section img{
+    padding-top: 30px;
+    display: block;
+    padding-bottom: 10px;
+
+}
+.form label{
+    display: block;
+}
+.contest h3{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 10px;
+    color: rgb(16, 73, 54);    
+}
