@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* shared style */
+
+.open-font {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal; 
+}
+.color{
+    color: #FD6E0A;
+}
+.btn{
+    background-color: #FD6E0A;
+    padding: 18px 35px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.header-section{
+    max-width: 827px;
+    text-align: center;
+    margin: 0 auto;
+}
+.Description-header{
+    font-size: 35px; 
+    color: #181818;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.Description-font{
+    font-size: 18px;
+    line-height: 30px;
+    color: #757575; 
+    margin-bottom: 30px;
+}
+.text-center{
+    text-align: center;
+}
+/* shared Resume section */
+.education-title, .experience-title{
+    margin: 113px 0 30px 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #474747;
+}
+    .card-title{
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #474747;
+    }
+    .card-sub-title{
+        font-size: 20px;
+        font-weight: 600;
+        color: #757575;
+        margin-bottom: 20px;
+    }
+    .card-info{
+        color: #757575;
+        line-height: 28px;
+        margin-bottom: 30px ;   
+    }
+
+
+
+
+/* Header section */
+header{
+    background-color: #FFF8F3;
+    padding-top: 50px;
+    background-image: url(../images/developer.png),url(../images/header_bg.png);
+    background-position: 23px 32px, bottom right;
+    background-repeat: no-repeat;
+
+    
+}
+
+nav{
+    max-width: 1140px;
+    width: 71%;
+    margin: 0 auto;
+}
+.nav-section{
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;  
+
+}
+nav .logo{
+    font-size: 45px;
+    color: #1E1E1E;
+}
+nav ul{
+    display: flex;
+    gap: 50px;
+    list-style-type: none;
+    align-items: center;
+    
+}
+nav a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #474747;
+}
+
+/* banner section */
+.banner{
+    display: flex;
+    /* max-width: 1332px; */
+    margin: 45px 38px 0 230px;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .banner-container{
+    max-width: 585px;
+} */
+.banner-content{
+    max-width: 585px;
+    margin-left: 71px;
+}
+.banner-content h2{
+    font-size: 45px;
+    color: #474747;
+    margin-bottom: 5px;
+
+}
+.banner-content h1{
+    font-size:85px ;
+    color: #181818; 
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.image-content img{
+    max-width: 584px;
+    vertical-align: middle;
+}
+/* main section */
+main{
+    width: 71%;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 130px;
+}
+/* about section */
+.about-container{
+    background-color: #FFF8F3;
+    padding: 131px 156px;
+    text-align: center;
+}
+
+.about-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.info-card p{
+    font-size: 20px;
+    color: #757575; 
+   
+
+}
+.info-card h4{
+    font-size: 20px;
+    color: #474747;
+
+}
+/* skill section */
+#Skill,.Description-header{
+    margin-top: 130px;
+}
+#Skill .skill-container{
+    display: flex;
+    gap: 24px;
+
+}
+#Skill .skill-container .skill-box{
+    box-shadow: 0 6px 50px #0000001e;
+    padding: 30px;
+    max-width: 267px;
+}
+#Skill .skill-container .skill-box img{
+    max-width: 44px;
+    margin-bottom: 30px;
+
+
+}
+#Skill .skill-container .skill-box h4{
+    font-size: 20px;
+    font-weight: bold;
+    color: #181818;
+    margin-bottom: 20px;
+
+}
+#Skill .skill-container .skill-box p{
+    line-height: 28px;
+    color: #757575;
+}
+
+/* Resune */
+.resume-container{
+    display: flex;
+    gap: 24px;
+}
+.resume-container hr{
+    margin-bottom: 30px;
+}
+/* Footer Section  */
+footer{
+    background-color: #FFF8F3;
+    margin-top: 113px;
+}
+footer .footer-container{
+    display: flex;
+    width: 71%;
+    max-width: 1140px;
+    margin: 0 auto;
+    gap: 117px;
+    padding: 130px 0 130px 0;
+
+}
+footer .footer-container .social h2,.form h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #181818;
+}
+footer .footer-container .social p{
+    line-height: 28px;
+    color: #757575;
+    margin-bottom: 30px;
+}
+
+footer .footer-container .social img{
+    max-width: 24px;
+    margin-right: 24px;
+}
+
+.form-area input[type="text"] ,input[type="email"],textarea{
+    width: 461px;
+    padding: 18px 31px;
+    margin-bottom: 24px;
+    line-height: 28px;
+    color: #757575;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+
+
