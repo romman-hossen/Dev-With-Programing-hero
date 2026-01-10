@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS POSITION</title>
+    <style>
+        .swim-container{
+            border: 1px solid red;
+            width: 300px;
+            /* padding:40px; */
+        }
+       
+         .box{
+            border: 1px dashed purple;
+            width: 200px;
+            /* padding: 30px;
+            text-align: center; */
+         }
+         .content div{
+            border: 1px solid purple;
+            width: 200px;
+            height: 200px;
+         }
+
+         /* position relative e tar jaiga ta fix theke norarchora kore  */
+        /* .boy{
+            position: relative;
+            top: -70px;
+        } */
+         /* Jodi kono parent na thake tahole position absolute root er against e kaj korbe .
+            r jodi parent thake tahole sei parent er against e kaj korbe .. r position absolute e elemmet ta fixed thake na mane jaiga ta thale nah */
+         /* .ring{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+         } */
+          .zero div{
+            border: 1px solid pink;
+            width: 200px;
+            height: 200px;
+          }
+          /* .ring{
+            position: sticky;
+            top: 50px;
+            left: 30px;
+          } */
+           .ring{
+            position: fixed;
+            bottom: 80px;
+            left: 500px;
+           }
+
+    </style>
+</head>
+<body>
+    <h3>CSS POSITION</h3>
+    <ol>
+        <li>Static</li>
+        <li>Relative</li>
+        <li>Absolute</li>
+        <li>Fixed</li>
+        <li>Sticky</li>
+    </ol>
+    <div class="swim-container">
+        <div class="box boy">
+            <img src="./boy.svg" alt="">
+        </div>
+        <div class="box ring">
+            <img src="./ring.svg" alt="">
+        </div>
+        <div class="box water">
+            <img src="./water.svg" alt="">
+        </div>
+        <div class="zero">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="content">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+</body>
+</html>

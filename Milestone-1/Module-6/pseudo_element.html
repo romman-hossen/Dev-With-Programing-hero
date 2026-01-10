@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo element</title>
+    <style>
+        h3::before{
+            content: "No";
+            margin-right: 10px;
+            color: brown;
+            background-color: rgb(53, 241, 179);
+        }
+        h3::after{
+            content: ".pdf";
+            color: red;
+            background-color: aqua;
+            font-size: 12px;
+        }
+        p::first-letter{
+            font-size: 80px;
+        }
+        h6::first-line{
+            font-size: 20px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+   <h3>Heading1</h3>
+   <h3>Heading2</h3>
+   <h3>Heading3</h3>
+   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae hic iste aperiam fugit iusto unde quia ratione. Molestias nostrum quibusdam velit maxime, unde officia numquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, alias. Soluta minus voluptatibus ipsum nesciunt repudiandae tenetur sunt ut fugit quas cumque numquam, molestiae nihil dolor accusantium quia reiciendis temporibus veniam nulla. Possimus labore quas laboriosam quae at id, voluptate consequatur molestias recusandae reprehenderit sunt nihil perspiciatis consectetur saepe quo eos odit deserunt laudantium rem cupiditate. Consectetur accusamus delectus quae adipisci modi.Quod non mollitia totam ab et, commodi, suscipit fugit neque dolores eaque iusto ipsum? Quod delectus cum totam sint commodi atque accusantium nobis reiciendis fuga? Quidem, mollitia. Accusamus iste dolores veniam reprehenderit quae odit impedit labore doloremque rem?</p>
+   <h6>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolores natus officia temporibus commodi! Earum labore tempora inventore placeat quaerat distinctio mollitia dolore incidunt illum maxime quisquam, non doloremque harum assumenda ullam, tempore alias aperiam quasi ea? Ut neque repudiandae quae ullam quisquam inventore perspiciatis consequatur eius suscipit. Qui vitae porro cupiditate dignissimos eligendi voluptatum, consequatur eveniet eum ducimus adipisci iusto cumque magnam repudiandae soluta sequi a cum repellendus quaerat nulla quas vel. Non pariatur modi tempore fugit, adipisci ratione! Quis numquam obcaecati perspiciatis id dolores non repellendus voluptas reiciendis, dolorum sunt, voluptatibus ab iure accusamus repudiandae rerum. Quis, consectetur.
+   </h6>
+</body>
+</html>
