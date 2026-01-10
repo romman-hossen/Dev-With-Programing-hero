@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-form</title>
+    <style>
+        nav a{
+            text-decoration: none;
+            color: black;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        form{
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            background-color: bisque;
+            border-radius: 10px;
+        }
+        .form-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        input:focus{
+            outline: none;
+            border: 1px solid rgb(235, 14, 14);
+            color: rgb(72, 173, 173);
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+        <nav>
+            <div class="nav-container">
+                <a href="">
+                    Home
+                </a>
+                 <a href="">Profile</a>
+                <a href="">
+                    Blog
+                </a><a href="">
+                    About
+                </a><a href="">
+                    More
+                </a>
+            </div>
+                <a href="">
+                 login
+                </a>                
+        </nav>
+        <div class="form-container">
+        <form>
+            <input type="text" name="" id="" placeholder="Your name" required>
+            <input type="email" name="" id=""placeholder="Your email" required>
+            <input type="submit" value="Login">
+        </form>
+        </div>   
+</body>
+</html>
