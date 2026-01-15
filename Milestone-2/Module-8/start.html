@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Responsive</title>
+    <style>
+        .container{
+            display: flex;
+            gap: 20px;
+
+        }
+        .box{
+            background-color: brown;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .small-box{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .box-item{
+            background-color: aqua;
+            width: 200px;
+        }
+
+        @media screen and (max-width:576px) {
+            .container{
+                flex-direction: column;
+                font-size: 1.5em;
+            }
+            .box-item{
+                width: 100%;
+            }
+        }
+        @media screen and (min-width:577px) and (max-width:992px) {
+            .container{
+                flex-direction: column-reverse;
+                font-size: 1.2em;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Remember me</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis vitae repellendus, explicabo aliquam et accusantium quia. Ad assumenda modi excepturi, eligendi id quis aut nesciunt. Veniam ipsum, ab dolorum assumenda nisi vero explicabo dolor! A fugiat, ipsam voluptates ullam mollitia assumenda sequi eius incidunt officiis. Et iure expedita laborum quas quibusdam reprehenderit, esse aperiam, libero distinctio nemo labore inventore ipsam officia fuga quaerat sint eaque. Sequi, dolorum eaque cumque vitae libero consequatur accusamus, quae suscipit excepturi quo a. At sunt corporis ducimus, nam, eligendi expedita veniam quaerat, labore eius nesciunt nemo provident quod inventore beatae vero repellat. Perferendis, esse repellat. Alias quasi a possimus doloremque eveniet recusandae. Accusantium sit praesentium debitis iste perspiciatis. Cupiditate rem assumenda ullam vel ipsum optio tenetur voluptatem?</p>
+        </div>
+        <div class="box">
+            <h2>Hello baby</h2>
+            <p>Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas facere quam eos eligendi voluptatum eaque odio dolores sed, officia harum. Earum dolorum vitae, eum, velit debitis quo dolorem voluptatibus alias nihil tempore maiores nam ex saepe ut quia aliquid. Iusto debitis adipisci autem nihil ad nam nostrum fuga assumenda velit, accusamus ipsam, iure ab dicta quae sunt in officia delectus commodi, voluptas sapiente tenetur laboriosam culpa! Quia corrupti dolor illum exercitationem, saepe, eveniet rem debitis dignissimos sit porro quo iure aliquid, alias nobis vel maiores totam. Aliquid, placeat! Laudantium quod hic vero possimus asperiores quasi. Voluptate officiis ab porro deleniti. sit amet, consectetur adipisicing elit. Aspernatur nemo iusto amet, magni reprehenderit corporis cum doloremque obcaecati ex quam dolorum facilis pariatur quo nostrum sapiente voluptates assumenda est quisquam?</p>
+        </div>
+    </div>
+    <div class="small-box">
+        <div class="box-item">box1</div>
+        <div class="box-item">box2</div>
+        <div class="box-item">box3</div>
+        <div class="box-item">box4</div>
+        <div class="box-item">box5</div>
+        <div class="box-item">box6</div>
+        <div class="box-item">box7</div>
+        <div class="box-item">box8</div>
+        <div class="box-item">box9</div>
+        <div class="box-item">box10</div>
+        <div class="box-item">box11</div>
+        <div class="box-item">box12</div>
+        <div class="box-item">box13</div>
+        <div class="box-item">box14</div>
+        <div class="box-item">box15</div>
+        <div class="box-item">box16</div>
+        <div class="box-item">box17</div>
+        <div class="box-item">box18</div>
+        <div class="box-item">box19</div>
+        <div class="box-item">box20</div>
+    </div>
+    
+</body>
+</html>
