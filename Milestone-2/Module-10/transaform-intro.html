@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        body{
+            margin: 100px;
+
+        }
+        body>.container,.item{
+            height: 300px;
+            width: 300px;
+            margin-bottom: 30px;   
+        }
+        .container{
+            background-color: rgba(0, 255, 255, 0.39);
+            border: 2px solid rgb(209, 124, 21);
+        }
+        .item{ 
+            border: 2px solid rgba(255, 0, 0, 0.61);
+            background-color: rgba(137, 43, 226, 0.473);
+            /* transform: scale(0.5) translateX(150px)  rotate(45deg) ; */
+            /* transform: scale(0.5, 0.75); */
+            /* transform: rotate(45deg); */
+        }
+        .item:hover{
+    transform: scale(0.5) rotate(45deg);
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">item-&</div>
+    </div>
+    <div class="container">
+        <div class="item">item-&</div>
+    
+    </div>
+    <div class="container">
+        <div class="item">item-&</div>
+    </div>
+
+    
+</body>
+</html>
