@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS specificity, style, priority, !important</title>
+    <style>
+         *{
+            color: rgb(20, 161, 161) !important;
+          }
+          h3{
+            color: bisque;
+            color: blueviolet;
+          }
+          h3{
+            color: brown;
+          }
+          .h3{
+            color: blue;
+          }
+          .h3{
+            color: chartreuse;
+            color: coral;
+          }
+          #h3{
+            color: red;
+          }
+    </style>
+   
+</head>
+<body>
+    <!-- CSS specificity, style, priority, !important -->
+    <h3 id="h3" class="h3">Ami amake best banate chai</h3>
+    <h3 id="h3">Amake dedigation dhore rakhte chai</h3>
+    <h3 id="h3" class="h3">Ami contineaously module ses porjontw korte chai</h3> 
+</body>
+</html>
