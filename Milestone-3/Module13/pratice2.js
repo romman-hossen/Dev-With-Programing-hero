@@ -1,0 +1,10 @@
+var mathematics,biology,chemistry,physics,bangla;
+mathematics= 75.25;
+biology = 65;
+chemistry= 80;
+physics= 35.45;
+bangla =99.50;
+var totalMark=mathematics+biology+chemistry+physics+bangla;
+var average = totalMark/5;
+// console.log(totalMark);
+console.log(average.toFixed(2));
