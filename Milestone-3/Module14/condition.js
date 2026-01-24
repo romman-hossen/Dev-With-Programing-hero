@@ -5,11 +5,11 @@
 // else{
 //     console.log("Fokir sala !!")
 // }
-const salary = 30000;
+// const salary = 30000;
 // const groom  ="kala";
 // const groom  ="shamla";
 
-const haveBsc = false;
+// const haveBsc = false;
 // if(salary>25000){
 //     console.log("Biya laga taratari");    
 // }
@@ -37,14 +37,37 @@ const haveBsc = false;
  * when you use compearesion and operation then make sure all code is okay !!
  * if  you compeare or operation on multiple condition then only 1 condition is okay then code will be executed
  */
-if(salary >=30000 && groom != "kala" && haveBsc){
-    console.log("Biya confirm tarikh thik kor!!")
-} 
+// if(salary >=30000 && groom != "kala" && haveBsc){
+//     console.log("Biya confirm tarikh thik kor!!")
+// } 
+// else{
+//     console.log("Dure jaie muri kha !!");
+// }
+
+/*** complex condition***/
+const height=67;
+const isBsc= true;
+const salary =40000;
+if((height>70 || salary >= 35000) && isBsc)
+{
+    console.log("Biya confirm");
+}
 else{
-    console.log("Dure jaie muri kha !!");
+    console.log('tera okad ke bahar he ye')
 }
 
-/*** complex condition*** */
+const age = 40;
+
+if((height>70 && salary >= 35000) || (isBsc && age <30 )) 
+{
+    console.log("Biya confirm");
+}
+else{
+    console.log('tera okad ke bahar he ye')
+}
+
+
+
 
 
 
