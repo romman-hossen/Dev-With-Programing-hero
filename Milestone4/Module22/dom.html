@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Dom </title>
+    <style>
+        h1{
+            background-color: aquamarine;
+            color: brown;
+        }
+        #valentine{
+            color: green;
+            background-color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <ul>
+            <li>jamat</li>
+            <li>Bnp</li>
+            <li>Ncp</li>
+            <li class="foxChiken">Dom party</li>
+        </ul>
+        <section>
+             <h1>Joy bangla</h1>
+             <h1>Jitbe ebar dhaner sish</h1>
+             <h1 id="valentine">14 February Happy valentine day.</h1>
+             <ul>
+                <li>Rose day</li>
+                <li id="choco">Chocolate day</li>
+                <li class="foxChiken">Teddy day</li>
+                <li class="foxChiken">Kiss day </li>
+                <li class="foxChiken">Valentine day</li>
+             </ul>
+
+        </section>
+    </main>
+    <script>
+        const obj = {
+            name:'Romman',
+            roll: 45 ,
+            sub : function(subject)
+            {
+                console.log('I am studying :',subject);
+
+            }
+        }
+        const liCollection = document.getElementsByTagName('li');
+        console.log(liCollection);
+        for(const li of liCollection)
+        {
+            // console.log(li.innerText);
+        }
+        let headingElement = document.getElementsByTagName('h1');
+        // console.log(headingElement.innerText)
+        for(const heading of headingElement)
+        {
+            // console.log(heading.innerText)
+        }
+        const uniqeId = document.getElementById('valentine')
+        uniqeId.innerText = "Happy maramarir Din";
+        console.log(uniqeId.innerText);
+
+        //get by id
+        const chocoElement = document.getElementById('choco')
+        console.log(chocoElement.innerText);
+        chocoElement.innerText = 'murgi ke top deoa hosse'; //change the value of list element 
+        console.log(chocoElement.innerText);
+
+        // get by class 
+        const shiyalMurgi = document.getElementsByClassName('foxChiken');
+        console.log(shiyalMurgi);
+        for(const toop of shiyalMurgi)
+        {
+            console.log(toop.innerText)
+        }
+
+    
+
+
+    </script>
+    <script src="./js/dom.js"></script>
+</body>
+</html>

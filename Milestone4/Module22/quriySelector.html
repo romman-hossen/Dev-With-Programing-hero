@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query selector</title>
+    <!-- nodeList vs htmlCollection -->
+     <style>
+        .lorem span{
+            background-color: aqua;
+        }
+
+     </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1 id="query">nodeList vs htmlCollection </h1>
+            <div class="lorem">
+                <p>Lorem ipsum dolor sit amet,<span>consectetur</span> adipisicing elit. Iusto,<span>voluptas quibusdam!</span> Sint aliquid doloribus <span>et temporibus ab. </span>Enim dolorem ad tenetur alias,<span> temporibus nulla aut soluta natus,</span> esse id ipsa.</p>
+            </div> 
+            <span>hello baby!!!</span>
+      </section>
+    </main>
+    <script>
+        const getElement = document.getElementById("query")
+        console.log(getElement);
+        // Query selector all
+        const loremElements = document.querySelectorAll('section .lorem span');
+        console.log(loremElements);
+        for(const element of loremElements){
+            console.log(element.innerText);
+        }
+        // Query selector 
+        const elements = document.querySelector('section .lorem span');
+        for(const elem of elements)
+        {
+            console.log(elem)
+        }
+
+
+    </script> 
+</body>
+</html>
