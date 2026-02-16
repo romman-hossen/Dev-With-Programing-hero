@@ -19,5 +19,12 @@ function makeYellow (){
         function makePurple(){
             document.body.style.backgroundColor = 'purple';
         }
+ 
+       //  event listener syntax : document.getElementById('id_name').addEventListener('event type', handler)
+       document.getElementById('make-green').addEventListener('click',function makeGreen(){
+        // console.log('sonamuni')
+        document.body.style.backgroundColor = 'green';
+       })
+
 
 

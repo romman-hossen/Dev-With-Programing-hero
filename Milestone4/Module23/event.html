@@ -23,10 +23,17 @@
        <button id="make-purple">I am purple</button>
 
        <!-- option 4 for event handling using eventListener method  -->
-        <button>Korah</button>
+        <button id="make-green">I am green</button>
+        <br>
+        <br>
+        <h1>Empty</h1>
+        <button id="btn-submit">submit</button>
     <script>
+        const submitBtn = document.getElementById('btn-submit').addEventListener("mouseout",function(){
+            console.log('hello')
+            document.body.style.backgroundColor = 'black'
 
-     addEventListener
+        })
         
     </script>
     <script src="./js/event.js"></script>
