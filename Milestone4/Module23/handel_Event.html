@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handel event</title>
+</head>
+<body>
+    <main>
+        <h1 id="value">Change the value</h1>
+        <button id="change">Change it </button>
+
+        <!-- eventListener baby -->
+         <p id="user-info">no user</p>
+         <button id="btn-info">login</button>
+
+         <!-- handle input text  -->
+          <p id="p-name">No name</p>
+          <input id="input-name" type="text" placeholder="your name"><br><br>
+          <button id="btn-update">update</button>
+
+    </main>
+    <script>
+
+
+        document.getElementById('btn-info').addEventListener('click',function(){
+            // console.log('hamio olari thita')
+            const userInfo = document.getElementById('user-info');
+            userInfo.innerText = 'User logged in successfully';
+        })
+
+        document.getElementById('btn-update').addEventListener('click',function(){
+            // console.log("update button")
+            const inputName = document.getElementById('input-name');
+            // console.log(inputName)
+            // get the text from the input felid
+            const name = inputName.value;
+            console.log('name',name);
+
+            // set the name
+            const pName = document.getElementById('p-name');
+            pName.innerText = name;
+
+
+
+        })
+     
+    </script>
+    <script src="./js/handel.js"></script>
+</body>
+</html>
