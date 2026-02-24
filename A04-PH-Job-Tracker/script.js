@@ -18,6 +18,41 @@ const isAppliedBtn = document.getElementById("btn-isApplied");
 // Delete btn 
 const deleteBtn = document.getElementById("btn-delete");
 
+// interview id
+const interviewField = document.getElementById("interview-field");
+
+// /create element 
+function interviewSection(){
+    interviewField.innerHTML = ''
+    for(let interview of interviewList)
+    {
+        console.log(interview);
+        let div = document.createElement("div")
+        div.className = 'flex justify-between bg-base-100 p-6 rounded-xl shadow';
+        div.innerHTML =`
+         <div class="space-y-5">
+                <div>
+                 <h3 class="company font-bold mb-1">Mobile First Corp</h3>
+                  <p class="skill text-gray-400">React Native Developer</p>
+                </div>
+                <p class="salary text-gray-400">Remote • Full-time • $130,000 - $175,000</p>
+                <div>
+                <button id="btn-isApplied" class="btn btn-soft mb-2">Not Applied</button>
+                <p class="work">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                </div>
+                <div class="flex gap-4">
+                    <button id="btn-interview" class="btn-interview btn btn-outline btn-success">interview</button>
+                    <button id="btn-rejected" class="btn-rejected btn btn-outline btn-error">Rejected</button>
+                </div>  
+            </div>
+            <div class="">
+                <img id="btn-delete" src="./asset/delete.png" alt="">
+            </div>
+        `
+
+    }
+}
+
 // main section 
 const main = document.querySelector("main");
 
