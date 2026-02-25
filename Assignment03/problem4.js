@@ -79,40 +79,81 @@
 //     }
 // }
 
+// function gonoVote(array) {
+//     let havote = 0;
+//     let navote = 0;
+//     if(Array.isArray(array) === true){
+//      for (const item of array)
+//     {
+//         if(item.includes(["ha"]))
+//         {
+//             havote ++;
+            
+//         }
+//         else{
+//             navote ++;
+//         }
+
+//     }
+//     if(havote > navote)
+//     {
+//         return true;
+//     }
+//     else if(havote === navote)
+//     {
+//         return "equal"
+//     }
+//     else{
+//         return false;
+//     }
+
+// }  
+//    else
+//         {
+//            return  "Invalid";
+//         } 
+    
+// }
+
 function gonoVote(array) {
     let havote = 0;
     let navote = 0;
-    if(Array.isArray(array) === true){
-     for (const item of array)
+    if(Array.isArray(array) === true)
     {
-        if(item.includes(["ha"]))
+     for (const arr of array)
+    {
+        if(arr.includes(["ha"]))
         {
             havote ++;
             
         }
-        else{
+        else if(arr.includes(["na"]))
+        {
             navote ++;
+        }
+        else{
+            return "Invalid";
         }
 
     }
     if(havote > navote)
-    {
+     {
         return true;
-    }
+     }
     else if(havote === navote)
-    {
+     {
         return "equal"
-    }
+     }
     else{
         return false;
-    }
-
-}  
+     }
+  }  
    else
-        {
-           return  "Invalid";
-        } 
-    
+    {
+      return  "Invalid";
+    }   
 }
-const voteRes = gonoVote(["ha","na","na","da"]);
+
+
+const voteRes = gonoVote(["ha","na","na"]);
 console.log(voteRes)

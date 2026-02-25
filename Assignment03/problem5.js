@@ -14,7 +14,7 @@
 
 function analyzeText(str) {
     // Your code here 
-    if(typeof str !== "string" ||  str === " ")
+    if(typeof str !== "string" ||  str === "")
    {
        return "Invalid";
    }
@@ -26,6 +26,7 @@ function analyzeText(str) {
     let length = 0;
     let textLen = 0;
     let  bigWord = "";
+
     for(let str of newStr)
 
         {
@@ -42,8 +43,7 @@ function analyzeText(str) {
             obj ={
                   longwords:  bigWord,
                   token:  textLen
-            }
-            
+            }         
 
         }
         return obj;
