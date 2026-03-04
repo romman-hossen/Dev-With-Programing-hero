@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #post-container{
+            max-width: 1160px;
+            margin:  50px auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            row-gap: 50px;
+                    
+        }
+        .post-card{
+           border: 1px solid rgb(139, 133, 133);
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 1px 1px 3px 0px rgb(168, 139, 139);
+           background-color: rgb(18, 158, 252);
+           min-height: 100%; 
+           /* display: none; */
+           
+        }
+        p{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+<button onclick="showJson()">Click me </button>
+<button onclick="postComment()">comment</button>
+
+<div id="post-container" class="">
+    <div class="post-card">
+     <h2>This is heading of this cramble</h2>
+     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium voluptatum soluta eius nobis minus nulla voluptatem enim. Ipsam totam ut officia! Impedit culpa harum soluta eos, veritatis illum consequuntur?</p>
+    </div>
+</div>  
+
+
+<script src="json.js"></script>
+<script src="file.js"></script>
+</body>
+</html>
