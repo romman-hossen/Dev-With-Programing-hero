@@ -32,7 +32,7 @@ const NavBar = () => {
       path: "/contact",
     },
   ];
-  const links = navLinks.map(route => <Link route ={route}></Link>)
+  const links = navLinks.map(route => <Link key={route.id} route ={route}></Link>)
 
   return (
     <nav className="flex justify-between mx-6 my-4">
