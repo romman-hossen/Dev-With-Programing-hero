@@ -19,6 +19,7 @@
     "id": 2,
     "name": "Standard Plan",
     "price": "$49.00/month",
+    "popular":"popular",
     "description": "Great for regular gym members who want structured classes, guidance, and better progress tracking.",
     "image": "https://images.unsplash.com/photo-1550345332-09e3ac987658",
     "features": [
