@@ -1,9 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
 
 const Post = () => {
     const postData = useLoaderData();
+     const params = useParams();
+    console.log('user is no',params.id)
     const {body,id} = postData;
+
+    
     // console.log(postData)
     const style = {
         backgroundColor : 'purple',

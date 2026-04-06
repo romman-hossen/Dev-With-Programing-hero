@@ -28,7 +28,7 @@ const User2 = ({load}) => {
             <Link to={`/users2/${data.id}`}>Details</Link>
 
             <button onClick={() => navigation(`/users2/${data.id}`)}>
-                user2
+                user{data.id}
             </button>
          </div>))}
         </div>

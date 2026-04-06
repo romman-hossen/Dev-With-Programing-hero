@@ -1,9 +1,13 @@
-import React from 'react';
 import { Link, useLoaderData } from 'react-router';
+import PostData from './PostData';
 
 const Posts = () => {
     const data =useLoaderData();
-    console.log(data)
+
+ 
+   
+
+    // console.log(data)
     return (
         <div style={{
             display:'grid',
@@ -12,23 +16,9 @@ const Posts = () => {
             gap:"30px",
             
         }}>
-            {data.map(item =><div style={{
-                border:'1px solid skyblue',
-                padding:'10px'
-                
-            }}>
-                <h2>{item.id}</h2>
-                <h1 style={{wordWrap:'break-word',
-            overflowWrap:'break-word',
-            fontSize:'1.5em'}}>{item.title}</h1>
-            <Link to={`/posts/${item.id}`}>
-            <button>Click me</button>
-            </Link>
-            </div>
-        )}
-            
-        </div>
-    );
+            {data.map(item => <PostData item ={item} key={item.id} ></PostData> )};
+    </div>
+            )
 };
 
 export default Posts;

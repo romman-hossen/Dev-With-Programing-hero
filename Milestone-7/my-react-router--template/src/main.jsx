@@ -41,26 +41,31 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path:"users2/:userId",
-        loader:({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
-        Component:UserDetails
-
+        path: "users2/:userId",
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        Component: UserDetails,
       },
       {
-        path:"/posts",
-        loader:() => fetch('https://jsonplaceholder.typicode.com/posts'),
-        Component:Posts
+        path: "/posts",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
+        Component: Posts,
       },
       {
-        path:'/posts/:id',
-        loader:({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
-        Component:Post
-      }
+        path: "/posts/:id",
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
+        Component: Post,
+      },
     ],
   },
   {
     path: "/about",
     Component: App,
+  },
+  {
+    path: "*",
+    element: <h1>404 content is not founded</h1>,
   },
 ]);
 
