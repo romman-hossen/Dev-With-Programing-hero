@@ -1,15 +1,26 @@
+'use client'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
+import { Geist } from 'next/font/google'
+ 
+const geist = Geist({
+  subsets: ['latin'],
+})
+
 const Navbar = () => {
+  const pathname = usePathname()
     const links = <>
-    <li><Link href= "/About">About</Link></li>
+
+    <li><Link href= "/" className={pathname === '/' ?'bg-blue-500' :''}>Home</Link></li>
+    <li><Link href= "/About" className={pathname ===  "/About"&& 'bg-amber-400'}>About</Link></li>
     <li><Link href= "/Blogs">Blogs</Link></li>
-    <li><Link href= "/Dashboard">Dashboard</Link></li>
-    <li><Link href= "/Users">Users</Link></li>
+    <li><Link href= "/Dashboard" >Dashboard</Link></li>
+    <li><Link href= "/Users" >Users</Link></li>
     </>
     return (
-       <div className="navbar bg-base-100 shadow-sm">
+       <div className={`${geist.className} navbar bg-base-100 shadow-sm`} >
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
