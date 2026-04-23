@@ -1,0 +1,22 @@
+[
+  { "id": 1, "name": "Alice Johnson", "email": "alice.johnson@email.com", "age": 28, "role": "admin" },
+  { "id": 2, "name": "Bob Smith", "email": "bob.smith@email.com", "age": 34, "role": "user" },
+  { "id": 3, "name": "Carol White", "email": "carol.white@email.com", "age": 22, "role": "user" },
+  { "id": 4, "name": "David Brown", "email": "david.brown@email.com", "age": 45, "role": "moderator" },
+  { "id": 5, "name": "Eva Martinez", "email": "eva.martinez@email.com", "age": 31, "role": "user" },
+  { "id": 6, "name": "Frank Lee", "email": "frank.lee@email.com", "age": 27, "role": "admin" },
+  { "id": 7, "name": "Grace Kim", "email": "grace.kim@email.com", "age": 39, "role": "user" },
+  { "id": 8, "name": "Henry Davis", "email": "henry.davis@email.com", "age": 52, "role": "moderator" },
+  { "id": 9, "name": "Isla Wilson", "email": "isla.wilson@email.com", "age": 24, "role": "user" },
+  { "id": 10, "name": "Jack Taylor", "email": "jack.taylor@email.com", "age": 36, "role": "user" },
+  { "id": 11, "name": "Karen Anderson", "email": "karen.anderson@email.com", "age": 29, "role": "admin" },
+  { "id": 12, "name": "Liam Thomas", "email": "liam.thomas@email.com", "age": 41, "role": "user" },
+  { "id": 13, "name": "Mia Jackson", "email": "mia.jackson@email.com", "age": 26, "role": "user" },
+  { "id": 14, "name": "Noah Harris", "email": "noah.harris@email.com", "age": 33, "role": "moderator" },
+  { "id": 15, "name": "Olivia Martin", "email": "olivia.martin@email.com", "age": 48, "role": "user" },
+  { "id": 16, "name": "Paul Garcia", "email": "paul.garcia@email.com", "age": 23, "role": "user" },
+  { "id": 17, "name": "Quinn Robinson", "email": "quinn.robinson@email.com", "age": 37, "role": "admin" },
+  { "id": 18, "name": "Rachel Clark", "email": "rachel.clark@email.com", "age": 30, "role": "user" },
+  { "id": 19, "name": "Samuel Lewis", "email": "samuel.lewis@email.com", "age": 44, "role": "moderator" },
+  { "id": 20, "name": "Tina Walker", "email": "tina.walker@email.com", "age": 25, "role": "user" }
+]
