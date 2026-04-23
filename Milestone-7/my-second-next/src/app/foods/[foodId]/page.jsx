@@ -5,7 +5,15 @@ const FoodDetails =async ({params}) => {
      const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/foods/${foodId}`);
     const data = await res.json();
     // console.log(data,"food page data")
+    // const foodDetails = data?.data?.[0];
     const foodDetails = data.data;
+    // if(!foodDetails){
+    //     return(
+    //         <div>
+    //             Item not found
+    //         </div>
+    //     )
+    // }
     const {dish_name,
     category,
     price,
@@ -14,7 +22,6 @@ const FoodDetails =async ({params}) => {
     main_ingredients,
     cooking_steps,
     approximate_nutrition_per_serving,
-    possible_price_in_dhaka
 } = foodDetails;
 
     console.log(foodDetails)
@@ -26,7 +33,7 @@ const FoodDetails =async ({params}) => {
         
         {/* 🔝 Header */}
         <div className="text-center space-y-3">
-          <h1 className="text-3xl md:text-4xl font-bold">{dish_name}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold">{data?.dish_name || "no name found"}</h1>
           <p className="text-gray-500 capitalize">{category}</p>
           <p className="text-green-600 font-semibold text-lg">৳ {price}</p>
         </div>
