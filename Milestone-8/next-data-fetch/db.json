@@ -1,22 +1,366 @@
-[
-  { "id": 1, "name": "Alice Johnson", "email": "alice.johnson@email.com", "age": 28, "role": "admin" },
-  { "id": 2, "name": "Bob Smith", "email": "bob.smith@email.com", "age": 34, "role": "user" },
-  { "id": 3, "name": "Carol White", "email": "carol.white@email.com", "age": 22, "role": "user" },
-  { "id": 4, "name": "David Brown", "email": "david.brown@email.com", "age": 45, "role": "moderator" },
-  { "id": 5, "name": "Eva Martinez", "email": "eva.martinez@email.com", "age": 31, "role": "user" },
-  { "id": 6, "name": "Frank Lee", "email": "frank.lee@email.com", "age": 27, "role": "admin" },
-  { "id": 7, "name": "Grace Kim", "email": "grace.kim@email.com", "age": 39, "role": "user" },
-  { "id": 8, "name": "Henry Davis", "email": "henry.davis@email.com", "age": 52, "role": "moderator" },
-  { "id": 9, "name": "Isla Wilson", "email": "isla.wilson@email.com", "age": 24, "role": "user" },
-  { "id": 10, "name": "Jack Taylor", "email": "jack.taylor@email.com", "age": 36, "role": "user" },
-  { "id": 11, "name": "Karen Anderson", "email": "karen.anderson@email.com", "age": 29, "role": "admin" },
-  { "id": 12, "name": "Liam Thomas", "email": "liam.thomas@email.com", "age": 41, "role": "user" },
-  { "id": 13, "name": "Mia Jackson", "email": "mia.jackson@email.com", "age": 26, "role": "user" },
-  { "id": 14, "name": "Noah Harris", "email": "noah.harris@email.com", "age": 33, "role": "moderator" },
-  { "id": 15, "name": "Olivia Martin", "email": "olivia.martin@email.com", "age": 48, "role": "user" },
-  { "id": 16, "name": "Paul Garcia", "email": "paul.garcia@email.com", "age": 23, "role": "user" },
-  { "id": 17, "name": "Quinn Robinson", "email": "quinn.robinson@email.com", "age": 37, "role": "admin" },
-  { "id": 18, "name": "Rachel Clark", "email": "rachel.clark@email.com", "age": 30, "role": "user" },
-  { "id": 19, "name": "Samuel Lewis", "email": "samuel.lewis@email.com", "age": 44, "role": "moderator" },
-  { "id": 20, "name": "Tina Walker", "email": "tina.walker@email.com", "age": 25, "role": "user" }
-]
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "author": "boka chol",
+      "age": 28,
+      "role": "admin",
+      "email": "alice.johnson@email.com"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "author": "Bob Smith",
+      "age": 34,
+      "role": "user",
+      "email": "bob.smith@email.com"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "author": "Carol White",
+      "age": 22,
+      "role": "user",
+      "email": "carol.white@email.com"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "author": "David Brown",
+      "age": 45,
+      "role": "moderator",
+      "email": "david.brown@email.com"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "author": "Eva Martinez",
+      "age": 31,
+      "role": "user",
+      "email": "eva.martinez@email.com"
+    },
+    {
+      "id": 6,
+      "title": "Post 6",
+      "author": "Frank Lee",
+      "age": 27,
+      "role": "admin",
+      "email": "frank.lee@email.com"
+    },
+    {
+      "id": 7,
+      "title": "Post 7",
+      "author": "Grace Kim",
+      "age": 39,
+      "role": "user",
+      "email": "grace.kim@email.com"
+    },
+    {
+      "id": 8,
+      "title": "Post 8",
+      "author": "Henry Davis",
+      "age": 52,
+      "role": "moderator",
+      "email": "henry.davis@email.com"
+    },
+    {
+      "id": 9,
+      "title": "Post 9",
+      "author": "Isla Wilson",
+      "age": 24,
+      "role": "user",
+      "email": "isla.wilson@email.com"
+    },
+    {
+      "id": 10,
+      "title": "Post 10",
+      "author": "Jack Taylor",
+      "age": 36,
+      "role": "user",
+      "email": "jack.taylor@email.com"
+    },
+    {
+      "id": 11,
+      "title": "Post 11",
+      "author": "Karen Anderson",
+      "age": 29,
+      "role": "admin",
+      "email": "karen.anderson@email.com"
+    },
+    {
+      "id": 12,
+      "title": "Post 12",
+      "author": "Liam Thomas",
+      "age": 41,
+      "role": "user",
+      "email": "liam.thomas@email.com"
+    },
+    {
+      "id": 13,
+      "title": "Post 13",
+      "author": "Mia Jackson",
+      "age": 26,
+      "role": "user",
+      "email": "mia.jackson@email.com"
+    },
+    {
+      "id": 14,
+      "title": "Post 14",
+      "author": "Noah Harris",
+      "age": 33,
+      "role": "moderator",
+      "email": "noah.harris@email.com"
+    },
+    {
+      "id": 15,
+      "title": "Post 15",
+      "author": "Olivia Martin",
+      "age": 48,
+      "role": "user",
+      "email": "olivia.martin@email.com"
+    },
+    {
+      "id": 16,
+      "title": "Post 16",
+      "author": "Paul Garcia",
+      "age": 23,
+      "role": "user",
+      "email": "paul.garcia@email.com"
+    },
+    {
+      "id": 17,
+      "title": "Post 17",
+      "author": "Quinn Robinson",
+      "age": 37,
+      "role": "admin",
+      "email": "quinn.robinson@email.com"
+    },
+    {
+      "id": 18,
+      "title": "Post 18",
+      "author": "Rachel Clark",
+      "age": 30,
+      "role": "user",
+      "email": "rachel.clark@email.com"
+    },
+    {
+      "id": 19,
+      "title": "Post 19",
+      "author": "Samuel Lewis",
+      "age": 44,
+      "role": "moderator",
+      "email": "samuel.lewis@email.com"
+    },
+    {
+      "id": 20,
+      "title": "Post 20",
+      "author": "Tina Walker",
+      "age": 25,
+      "role": "user",
+      "email": "tina.walker@email.com"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Horror",
+      "year": 1925,
+      "pages": 180,
+      "rating": 4.2,
+      "price": 9.99
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "year": 1960,
+      "pages": 281,
+      "rating": 4.8,
+      "price": 12.99
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "year": 1949,
+      "pages": 328,
+      "rating": 4.7,
+      "price": 10.99
+    },
+    {
+      "id": 4,
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "genre": "Fantasy",
+      "year": 1997,
+      "pages": 309,
+      "rating": 4.9,
+      "price": 14.99
+    },
+    {
+      "id": 5,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "genre": "Adventure",
+      "year": 1988,
+      "pages": 208,
+      "rating": 4.6,
+      "price": 11.99
+    },
+    {
+      "id": 6,
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "genre": "Dystopian",
+      "year": 1932,
+      "pages": 311,
+      "rating": 4.4,
+      "price": 10.49
+    },
+    {
+      "id": 7,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Fiction",
+      "year": 1951,
+      "pages": 224,
+      "rating": 4.0,
+      "price": 9.49
+    },
+    {
+      "id": 8,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "year": 1813,
+      "pages": 432,
+      "rating": 4.7,
+      "price": 8.99
+    },
+    {
+      "id": 9,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "year": 1937,
+      "pages": 310,
+      "rating": 4.8,
+      "price": 13.99
+    },
+    {
+      "id": 10,
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "genre": "Adventure",
+      "year": 1851,
+      "pages": 635,
+      "rating": 3.9,
+      "price": 8.49
+    },
+    {
+      "id": 11,
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "genre": "Historical",
+      "year": 1869,
+      "pages": 1225,
+      "rating": 4.5,
+      "price": 15.99
+    },
+    {
+      "id": 12,
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "genre": "Psychological",
+      "year": 1866,
+      "pages": 549,
+      "rating": 4.6,
+      "price": 11.49
+    },
+    {
+      "id": 13,
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "genre": "Thriller",
+      "year": 2003,
+      "pages": 454,
+      "rating": 4.3,
+      "price": 13.49
+    },
+    {
+      "id": 14,
+      "title": "Gone with the Wind",
+      "author": "Margaret Mitchell",
+      "genre": "Historical",
+      "year": 1936,
+      "pages": 1037,
+      "rating": 4.5,
+      "price": 14.49
+    },
+    {
+      "id": 15,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "year": 1954,
+      "pages": 1178,
+      "rating": 4.9,
+      "price": 19.99
+    },
+    {
+      "id": 16,
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "genre": "Satire",
+      "year": 1945,
+      "pages": 112,
+      "rating": 4.5,
+      "price": 7.99
+    },
+    {
+      "id": 17,
+      "title": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "genre": "Sci-Fi",
+      "year": 2008,
+      "pages": 374,
+      "rating": 4.7,
+      "price": 12.49
+    },
+    {
+      "id": 18,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "genre": "Non-Fiction",
+      "year": 2011,
+      "pages": 443,
+      "rating": 4.6,
+      "price": 16.99
+    },
+    {
+      "id": 19,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "genre": "Self-Help",
+      "year": 2018,
+      "pages": 320,
+      "rating": 4.8,
+      "price": 17.99
+    },
+    {
+      "id": 20,
+      "title": "The Subtle Art of Not Giving a F*ck",
+      "author": "Mark Manson",
+      "genre": "Self-Help",
+      "year": 2016,
+      "pages": 224,
+      "rating": 4.4,
+      "price": 15.49
+    }
+  ]
+}
