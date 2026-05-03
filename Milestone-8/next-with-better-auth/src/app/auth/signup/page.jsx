@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,24 +12,29 @@ import {
 } from "@heroui/react";
 
 const SignUpPage = () => {
-  //     const onSubmit = (e) => {
-  //     e.preventDefault();
-  //     const formData = new FormData(e.currentTarget);
-  //     const data = {};
-  //     // Convert FormData to plain object
-  //     formData.forEach((value, key) => {
-  //       data[key] = value.toString();
-  //     });
-  //     alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
-  //   };
+      const onSubmit = async(e) => {
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
+      const fData = Object.fromEntries(formData.entries());
+    //   console.log(data["name"])
+    // console.log(data)
+    const { data, error } = await authClient.signUp.email({
+        name: fData["name"],
+        email: fData["email"],
+        password: fData["password"],
+
+    })
+    console.log(data, error)
+    };
+
 
   return (
     <div className="flex flex-col justify-center items-center min-h-[90vh]">
       <h1>Sign UP Now</h1>
       <Form
         className="flex w-96 flex-col gap-4 "
-        render={(props) => <form {...props} data-custom="foo" />}
-        // onSubmit={onSubmit}
+        // render={(props) => <form {...props} data-custom="foo" />}
+        onSubmit={onSubmit}
       >
         {/* name  */}
         <TextField
@@ -99,6 +105,6 @@ const SignUpPage = () => {
       </Form>
     </div>
   );
-};
 
+}
 export default SignUpPage;
