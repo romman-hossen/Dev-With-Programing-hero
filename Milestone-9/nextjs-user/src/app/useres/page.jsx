@@ -9,7 +9,7 @@ const UserPage =async() => {
             {
                 data.map(d => <div key={d.id} className='p-4 border-2 rounded-lg text-center'>
                     <h2 className='text-2xl text-accent'>{d.name}</h2>
-                    <p className='text-amber-200'>{d.age}</p>
+                    <p className='text-amber-200'>{d.email}</p>
                 </div>)
             }
             
