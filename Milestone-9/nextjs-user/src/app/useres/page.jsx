@@ -11,8 +11,7 @@ const UserPage =async() => {
                     <h2 className='text-2xl text-accent'>{d.name}</h2>
                     <p className='text-amber-200'>{d.email}</p>
                 </div>)
-            }
-            
+            }         
         </div>
     );
 };
