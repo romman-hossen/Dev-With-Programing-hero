@@ -1,10 +1,10 @@
-const express = require('express')
-const app  = express();
-const cors = require('cors');
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.PORT || 5001;
 
-app.use(cors(),express.json());
+app.use(cors(), express.json());
 
 // const uri = process.env.MONGODB_URI;
 // MONGODB_URI = mongodb+srv://<db_username>:<db_password>@cluster0.rsp6gjh.mongodb.net/?appName=Cluster0
@@ -16,52 +16,74 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
 });
-const run =async () =>{
-    try {
+const run = async () => {
+  try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-     const db = client.db("SimpleCrud");
+    const db = client.db("SimpleCrud");
     const userCollection = db.collection("Users");
 
-    app.get('/users',async(req,res) =>{
+    app.get("/users", async (req, res) => {
       const cursor = userCollection.find();
       const result = await cursor.toArray();
       res.send(result);
-    })
-    app.get('/users/:id',async(req,res) => {
+    });
+    app.get("/users/:id", async (req, res) => {
       const id = req.params.id;
       const query = {
-        _id: new ObjectId(id)
-      }
-      const user = await userCollection.findOne(query)
-      console.log('req',id)
-      res.send(user)     
-    })
-    app.delete('/users/:id',async(req,res) => {
-       const id = req.params.id;
-        const query = {
-        _id: new ObjectId(id)
-      }
+        _id: new ObjectId(id),
+      };
+      const user = await userCollection.findOne(query);
+      console.log("req", id);
+      res.send(user);
+    });
+    app.delete("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = {
+        _id: new ObjectId(id),
+      };
       const result = await userCollection.deleteOne(query);
-      res.send(result)
-    })
+      res.send(result);
+    });
+    app.post("/users", async (req, res) => {
+      const newUser = req.body;
+      const result = await userCollection.insertOne(newUser);
+      res.send(result);
+    });
+    app.patch("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = {
+        _id: new ObjectId(id),
+      }; 
+      const modifiedUser = req.body;
+      const updateDocument = {
+        $set: {
+          name:modifiedUser.name,
+          email:modifiedUser.email,
+          role:modifiedUser.role
+        },
+      };
+      const result = await userCollection.updateOne(filter,updateDocument);
+      res.send(result);
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!",
+    );
   } finally {
     // Ensures that the client will close when you finish/error
-    // await client.close();  
+    // await client.close();
   }
-
-}
+};
 run().catch(console.dir);
 
-app.get('/',(req,res) => {
-    res.send("Hello world")
-})
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});
 app.listen(port, () => {
-    console.log(`Express success done ${port}`)
-})
+  console.log(`Express success done ${port}`);
+});
