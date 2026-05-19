@@ -1,12 +1,11 @@
 "use client";
-import { DeleteUser } from "@/app/action";
 import { AlertDialog, Button, Table } from "@heroui/react";
 import Link from "next/link";
 
-const UsersData = ({ userData }) => {
+const UsersData = ({ userData ,deleteUserAction}) => {
   console.log("This is user data", userData);
   const handleDelete =async(userId) =>{
-   await DeleteUser(userId)
+   deleteUserAction(userId)
   }
   return (
     <div>
@@ -29,7 +28,7 @@ const UsersData = ({ userData }) => {
                     <Link href={`users/${user._id}`}>
                       <Button variant="outline">Details</Button>
                     </Link>
-                    <Link href={`users/${user._id}`}>
+                    <Link href={`users/${user._id}/edit`}>
                       <Button variant="secondary">Edit</Button>
                     </Link>
                     <AlertDialog>
