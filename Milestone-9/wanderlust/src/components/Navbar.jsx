@@ -8,9 +8,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
             <div className="list-none flex gap-2 gap-2">
                 <li><Link href={'/'}>Home</Link></li>
-                <li><Link href={'/add-destination'}>Destinations</Link></li>
+                <li><Link href={'/destinations'}>Destinations</Link></li>
                 <li><Link href={'my-bookings'}>My Bookings</Link></li>
                 <li><Link href={'admin'}>Admin</Link></li>
+                <li><Link href={'/add-destination'}> Add-Destinations</Link></li>
             </div>
             <Image src={"/assets/Wanderlast.png"} width={100} height={100} alt="Wanderlast logo"/>  
             <div className="flex list-none gap-2">

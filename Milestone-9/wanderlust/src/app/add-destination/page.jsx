@@ -1,13 +1,31 @@
+'use client';
 import { Button, FieldError, Input, Label, ListBox, TextArea, TextField,Select } from "@heroui/react";
-import { utile } from "../layout";
+
 
 
 const AddDestinationPage = () => {
+    const handleDestination = async (e) => {
+        e.preventDefault();
+        // const formdata = new FormData(e.target);
+        // const destinationData = Object.fromEntries(formdata.entries());
+    const destination = Object.fromEntries(new FormData(e.target).entries())
+        console.log(destination);   
+        const res = await fetch('http://localhost:5000/destination', {  
+            method: 'POST',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(destination)  
+    })
+    const data = await res.json();
+    console.log(data);
+}
     return (
         <div className="max-w-7xl mx-auto w-4xl my-16">
-            <h1 className={`${utile.className} text-5xl`}>Add New Travel Package</h1>
+            <h1 className={`font-light text-5xl`}>Add New Travel Package</h1>
             <form
             className="p-10 space-y-8"
+            onSubmit={handleDestination}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Destination Name */}
