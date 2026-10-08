@@ -7,7 +7,7 @@ const DestinationsPage = async () => {
     const destinations = await res.json();
     console.log(destinations);
     return (
-        <div className="my-30">
+        <div className="my-30 max-w-7xl mx-auto">
             <h1 className="text-3xl">Explore All Destinations </h1>
             <h3 className="text-xl">Find your perfect travel experience from our curated collection</h3>
             <div className="grid grid-cols-4 gap-4 p-4">
