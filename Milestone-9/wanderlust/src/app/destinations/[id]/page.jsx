@@ -19,7 +19,7 @@ const DestinationDetailsPage = async ({ params }) => {
         <BackBtn />
       
           <div className="flex items-center gap-2">
-           <UpdateDestination />
+           <UpdateDestination destination = {destination}/>
             <Button variant="danger-soft" className="rounded-none" size="sm">
               <IoRemoveCircleOutline />
               Delete 

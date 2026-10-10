@@ -13,7 +13,8 @@ import {
 } from "@heroui/react";
 import { RiEdit2Line } from "react-icons/ri";
 
-export function UpdateDestination() {
+export function UpdateDestination({destination}) {
+    const {destinationName,country,_id,price,duration,imageUrl,category} = destination; 
     
   return (
     <Modal>
@@ -40,6 +41,7 @@ export function UpdateDestination() {
                         <Input
                           placeholder="Bali Paradise"
                           className="rounded-2xl"
+                          defaultValue={destinationName}
                         />
                         <FieldError />
                       </TextField>
@@ -48,7 +50,10 @@ export function UpdateDestination() {
                     {/* Country */}
                     <TextField name="country" isRequired>
                       <Label>Country</Label>
-                      <Input placeholder="Indonesia" className="rounded-2xl" />
+                      <Input
+                       placeholder="Indonesia"
+                       className="rounded-2xl"
+                       defaultValue={country} />
                       <FieldError />
                     </TextField>
 
@@ -59,6 +64,7 @@ export function UpdateDestination() {
                         isRequired
                         className="w-full"
                         placeholder="Select category"
+                        defaultValue={category}
                       >
                         <Label>Category</Label>
                         <Select.Trigger className="rounded-2xl">
@@ -103,6 +109,7 @@ export function UpdateDestination() {
                         type="number"
                         placeholder="1299"
                         className="rounded-2xl"
+                        defaultValue={price}
                       />
                       <FieldError />
                     </TextField>
@@ -113,6 +120,7 @@ export function UpdateDestination() {
                       <Input
                         placeholder="7 Days / 6 Nights"
                         className="rounded-2xl"
+                        defaultValue={duration}
                       />
                       <FieldError />
                     </TextField>
@@ -121,7 +129,7 @@ export function UpdateDestination() {
                     <div className="md:col-span-2">
                       <TextField name="departureDate" type="date" isRequired>
                         <Label>Departure Date</Label>
-                        <Input type="date" className="rounded-2xl" />
+                        <Input type="date" className="rounded-2xl"/>
                         <FieldError />
                       </TextField>
                     </div>
