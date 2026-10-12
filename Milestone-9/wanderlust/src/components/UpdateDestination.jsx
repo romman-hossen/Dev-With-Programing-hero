@@ -14,7 +14,23 @@ import {
 import { RiEdit2Line } from "react-icons/ri";
 
 export function UpdateDestination({destination}) {
-    const {destinationName,country,_id,price,duration,imageUrl,category} = destination; 
+    const {destinationName,country,_id,price,duration,imageUrl,category,departureDate,description} = destination;
+    const handleDestination = async (e) => { 
+      e.preventDefault();
+      const destination = Object.fromEntries(new FormData(e.target).entries());
+      console.log(destination);
+      const res = await fetch(`http://localhost:5000/destination/${_id}`, {
+        method: "PATCH",
+        headers:{
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(destination)
+
+        
+     } )
+     const data = await res.json();
+    }
+
     
   return (
     <Modal>
@@ -24,7 +40,7 @@ export function UpdateDestination({destination}) {
       </Button>{" "}
       <Modal.Backdrop>
         <Modal.Container placement="auto">
-          <Modal.Dialog className="sm:max-w-md">
+          <Modal.Dialog className="sm:max-w-xl">
             <Modal.CloseTrigger />
             <Modal.Header>
               <Modal.Icon className="bg-accent-soft text-accent-soft-foreground"></Modal.Icon>
@@ -32,28 +48,27 @@ export function UpdateDestination({destination}) {
             </Modal.Header>
             <Modal.Body className="p-6">
               <Surface variant="default">
-                <form className="p-10 space-y-8">
+                <form className="p-10 space-y-8" onSubmit={handleDestination}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Destination Name */}
                     <div className="md:col-span-2">
-                      <TextField name="destinationName" isRequired>
+                      <TextField name="destinationName"   defaultValue={destinationName} isRequired>
                         <Label>Destination Name</Label>
                         <Input
                           placeholder="Bali Paradise"
-                          className="rounded-2xl"
-                          defaultValue={destinationName}
+                          className="rounded-2xl"                      
                         />
                         <FieldError />
                       </TextField>
                     </div>
 
                     {/* Country */}
-                    <TextField name="country" isRequired>
+                    <TextField name="country" isRequired defaultValue={country}>
                       <Label>Country</Label>
                       <Input
                        placeholder="Indonesia"
                        className="rounded-2xl"
-                       defaultValue={country} />
+                        />
                       <FieldError />
                     </TextField>
 
@@ -65,6 +80,7 @@ export function UpdateDestination({destination}) {
                         className="w-full"
                         placeholder="Select category"
                         defaultValue={category}
+
                       >
                         <Label>Category</Label>
                         <Select.Trigger className="rounded-2xl">
@@ -103,31 +119,31 @@ export function UpdateDestination({destination}) {
                     </div>
 
                     {/* Price */}
-                    <TextField name="price" type="number" isRequired>
+                    <TextField name="price" type="number"  defaultValue={price}
+                    isRequired>
                       <Label>Price (USD)</Label>
                       <Input
                         type="number"
                         placeholder="1299"
                         className="rounded-2xl"
-                        defaultValue={price}
                       />
                       <FieldError />
                     </TextField>
 
                     {/* Duration */}
-                    <TextField name="duration" isRequired>
+                    <TextField name="duration" isRequired  defaultValue={duration}
+>
                       <Label>Duration</Label>
                       <Input
                         placeholder="7 Days / 6 Nights"
                         className="rounded-2xl"
-                        defaultValue={duration}
                       />
                       <FieldError />
                     </TextField>
 
                     {/* Departure Date */}
                     <div className="md:col-span-2">
-                      <TextField name="departureDate" type="date" isRequired>
+                      <TextField name="departureDate" defaultValue={departureDate} type="date" isRequired>
                         <Label>Departure Date</Label>
                         <Input type="date" className="rounded-2xl"/>
                         <FieldError />
@@ -136,7 +152,7 @@ export function UpdateDestination({destination}) {
 
                     {/* Image URL - Removed preview */}
                     <div className="md:col-span-2">
-                      <TextField name="imageUrl" isRequired>
+                      <TextField name="imageUrl" defaultValue={imageUrl} isRequired>
                         <Label>Image URL</Label>
                         <Input
                           type="url"
@@ -149,7 +165,7 @@ export function UpdateDestination({destination}) {
 
                     {/* Description */}
                     <div className="md:col-span-2">
-                      <TextField name="description" isRequired>
+                      <TextField name="description" defaultValue={description} isRequired>
                         <Label>Description</Label>
                         <TextArea
                           placeholder="Describe the travel experience..."
@@ -165,9 +181,11 @@ export function UpdateDestination({destination}) {
                   <Button
                     type="submit"
                     variant="outline"
+                    slot="close"
                     //   isLoading={isPending}
                     className=" rounded-none w-full bg-cyan-500 text-white"
                   >
+                    Add Destination
                     {/* {isPending ? "Adding Package..." : "Add Travel Package"} */}
                   </Button>
                 </form>

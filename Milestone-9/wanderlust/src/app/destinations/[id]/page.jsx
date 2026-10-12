@@ -1,4 +1,5 @@
 import BackBtn from "@/components/BackBtn";
+import { DeleteDestination } from "@/components/DeleteDestination";
 import { UpdateDestination } from "@/components/UpdateDestination";
 import { Button } from "@heroui/react";
 import Image from "next/image";
@@ -20,10 +21,7 @@ const DestinationDetailsPage = async ({ params }) => {
       
           <div className="flex items-center gap-2">
            <UpdateDestination destination = {destination}/>
-            <Button variant="danger-soft" className="rounded-none" size="sm">
-              <IoRemoveCircleOutline />
-              Delete 
-            </Button>
+            <DeleteDestination destination = {destination} />
           </div>
       </div>
       <div className="min-w-5xl aspect-video relative">
