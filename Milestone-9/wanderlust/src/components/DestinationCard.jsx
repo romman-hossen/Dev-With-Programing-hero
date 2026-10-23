@@ -35,8 +35,6 @@ const DestinationCard = ({destination}) => {
                    <span className="flex items-center text-cyan-500 underline gap-1 hover:text-shadow-cyan-200"><span>BOOK NOW  </span><GoArrowUpRight />
              </span>
             </Link>
-     
-            
         </div>
     );
 };
