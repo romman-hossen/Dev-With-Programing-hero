@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className="flex list-none gap-2">
           <li ><Link href={'/profile'} className="flex items-center gap-1 "><FaRegUser/> Profile</Link></li>
           <li><Link href={'/login'}>Login</Link></li>
-          <li><Link href={'/sign-up'}>Sign Up</Link></li>        
+          <li><Link href={'/signup'}>Sign Up</Link></li>        
             </div>          
         </div>
     );
