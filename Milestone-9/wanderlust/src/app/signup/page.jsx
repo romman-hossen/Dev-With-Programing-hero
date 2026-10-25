@@ -37,12 +37,11 @@ const SignUpPage = () => {
   return (
     <div className="mx-auto max-w-7xl my-20">
       <div className="flex flex-col gap-3 text-center">
-        <h3 className="font-utile text-5xl">Create Account</h3>
+        <h3 className="font-utile text-5xl ">Create Account</h3>
         <p className="text-lg text-gray-500">
           Start your adventure with Wanderlust
         </p>
       </div>
-
       <Card className="shadow-xl p-10 ">
         <Form className="flex max-w-96 flex-col gap-4" onSubmit={onSubmit}>
           <TextField isRequired name="name" type="text">
@@ -92,8 +91,7 @@ const SignUpPage = () => {
               Must be at least 8 characters with 1 uppercase and 1 number
             </Description>
             <FieldError />
-          </TextField>
-         
+          </TextField>   
           <div className="">
             <Button type="submit" className={"min-w-full bg-cyan-500"}>
               Create Account
@@ -104,5 +102,4 @@ const SignUpPage = () => {
     </div>
   );
 };
-
 export default SignUpPage;
