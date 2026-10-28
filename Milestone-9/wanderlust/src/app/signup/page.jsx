@@ -11,6 +11,8 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
+
 
 const SignUpPage = () => {
   const router = useRouter();
@@ -34,15 +36,20 @@ const SignUpPage = () => {
       router.push('/')
     }
   }
+  const handleGoogleSubmit =async () => {
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
+  }
   return (
     <div className="mx-auto max-w-7xl my-20">
-      <div className="flex flex-col gap-3 text-center">
+      <div className="flex flex-col gap-3 text-center mb-4">
         <h3 className="font-utile text-5xl ">Create Account</h3>
         <p className="text-lg text-gray-500">
           Start your adventure with Wanderlust
         </p>
       </div>
-      <Card className="shadow-xl p-10 ">
+      <Card className="shadow-xl p-10 bg-gray-50">
         <Form className="flex max-w-96 flex-col gap-4" onSubmit={onSubmit}>
           <TextField isRequired name="name" type="text">
             <Label>Full Name</Label>
@@ -98,6 +105,9 @@ const SignUpPage = () => {
             </Button>
           </div>
         </Form>
+       <span className="text-center text-gray-500">Or sign up with</span>
+       <Button onClick={handleGoogleSubmit} variant="outline" className={"w-full"}><FcGoogle />
+          Sign Up With Google</Button>      
       </Card>
     </div>
   );
