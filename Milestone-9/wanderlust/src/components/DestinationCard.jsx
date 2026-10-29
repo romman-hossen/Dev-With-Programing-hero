@@ -9,7 +9,7 @@ const DestinationCard = ({destination}) => {
     const { destinationName,country,_id,price,duration,imageUrl} = destination;    
     console.log("This is destination page",country)
     return (
-        <div className="space-y-2 border border-gray-200 shadow rounded-xl p-3 hover:scale-105 transition-all duration-300 cursor-pointer">
+        <div className="space-y-2 border border-gray-200 overflow-hidden  shadow rounded-xl p-3 hover:scale-105 transition-all duration-300 cursor-pointer">
             <div className="relative aspect-video">
                 <Image
                 fill

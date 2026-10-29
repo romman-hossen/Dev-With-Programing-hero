@@ -10,7 +10,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 
 
@@ -37,7 +37,7 @@ const SignUpPage = () => {
     }
   }
   const handleGoogleSubmit =async () => {
-    const data = await authClient.signIn.social({
+   await authClient.signIn.social({
     provider: "google",
   });
   }
@@ -107,7 +107,8 @@ const SignUpPage = () => {
         </Form>
        <span className="text-center text-gray-500">Or sign up with</span>
        <Button onClick={handleGoogleSubmit} variant="outline" className={"w-full"}><FcGoogle />
-          Sign Up With Google</Button>      
+          Sign Up With Google</Button>    
+           <div className="text-gray-500 text-center">Already have an account? <span onClick={() => {redirect('/signin')}} className="text-cyan-500 font-semibold">Sign In</span></div>  
       </Card>
     </div>
   );

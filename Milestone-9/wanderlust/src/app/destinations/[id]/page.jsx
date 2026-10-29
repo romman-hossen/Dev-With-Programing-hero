@@ -1,7 +1,8 @@
 import BackBtn from "@/components/BackBtn";
+import BookingCard from "@/components/BookingCard";
 import { DeleteDestination } from "@/components/DeleteDestination";
 import { UpdateDestination } from "@/components/UpdateDestination";
-import { Button } from "@heroui/react";
+import { Button, Card } from "@heroui/react";
 import Image from "next/image";
 
 import { CiCalendarDate } from "react-icons/ci";
@@ -33,8 +34,8 @@ const DestinationDetailsPage = async ({ params }) => {
         />
       </div>
       <div className="border-b-2 border-gray-100 my-10"></div>
-      
-      <div className="space-y-6">
+      <div className="grid grid-cols-4 gap-3">
+      <div className="space-y-6 col-span-3">
         <div>
           <div className="flex items-center gap-0.5">
             <IoLocationOutline />
@@ -46,13 +47,16 @@ const DestinationDetailsPage = async ({ params }) => {
             <span>{destination?.duration}</span> 
           </div>
         </div>
-
         <div>
           <h3 className="text-2xl">Overview</h3>
           <p>{destination?.description}</p>
 
         </div>
       </div>
+      <div className="col-span-1">
+        <BookingCard destination={destination}/>
+      </div>
+       </div>
 
       {/* <div>
         <div>
