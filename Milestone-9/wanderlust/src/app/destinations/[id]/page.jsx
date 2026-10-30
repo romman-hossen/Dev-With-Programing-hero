@@ -6,8 +6,7 @@ import { Button, Card } from "@heroui/react";
 import Image from "next/image";
 
 import { CiCalendarDate } from "react-icons/ci";
-import { IoLocationOutline, IoRemoveCircleOutline } from "react-icons/io5";
-import { RiEdit2Line } from "react-icons/ri";
+import { IoLocationOutline } from "react-icons/io5";
 
 const DestinationDetailsPage = async ({ params }) => {
   // console.log("This is destination details page",params)
