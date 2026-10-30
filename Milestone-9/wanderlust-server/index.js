@@ -7,8 +7,6 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 
-
-
 // Replace the placeholder with your Atlas connection string
 // const uri = "mongodb+srv://wanderlust:wvBkEkzK2De5qEC4@cluster0.rsp6gjh.mongodb.net/?appName=Cluster0";
 const uri = process.env.MONGO_URI;
@@ -26,7 +24,7 @@ const client = new MongoClient(uri, {
     await client.connect();
     const db = client.db('wanderlust');
     const destinationsCollection = db.collection('destinations');
-     
+    const bookingCollection = db.collection('bookings');
     app.post('/destination', async (req, res) => {
         const destination = req.body;
         console.log(destination);
@@ -49,7 +47,6 @@ const client = new MongoClient(uri, {
     // app.patch('/destination/:id', async (req, res) => {
     //   const id = req.params.id;
     //   const updatedDestination = req.body;  
-      
     // })
     app.patch('/destination/:id', async(req,res) => {
       const id = req.params.id;
@@ -66,12 +63,19 @@ const client = new MongoClient(uri, {
       console.log(result, "this is result")
       res.json(result)
     })
-    
-
+    app.post('/booking', async(req,res) => {
+      const bookingData = req.body;
+      const result = bookingCollection.insertOne(bookingData);
+      console.log(result)
+      res.json(result)
+    })
+    app.get('/booking', async(req,res) => {
+      const result = await bookingCollection.find().toArray()
+      res.send(result)
+    })
     // app.get('/', (req, res) => {
     //     res.send('Wanderlust server is running');
     // });
-
     // Send a ping to confirm a successful connection
     const result = await client.db('admin').command({ ping: 1 });
     console.log(
