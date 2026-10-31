@@ -26,7 +26,7 @@ const Navbar = () => {
             <Link href={"/destinations"}>Destinations</Link>
           </li>
           <li>
-            <Link href={"my-bookings"}>My Bookings</Link>
+            <Link href={"/mybookings"}>My Bookings</Link>
           </li>
           <li>
             <Link href={"admin"}>Admin</Link>

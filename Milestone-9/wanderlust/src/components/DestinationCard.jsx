@@ -13,7 +13,8 @@ const DestinationCard = ({destination}) => {
             <div className="relative aspect-video">
                 <Image
                 fill
-                src={imageUrl} 
+                src={imageUrl
+                } 
                 alt={destinationName} 
                 className="object-cover rounded-xl"  
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
