@@ -1,4 +1,5 @@
 import BookingDeleteAlert from "@/components/BookingDeleteAlert";
+import { auth } from "@/lib/auth";
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
 import { headers } from "next/headers";
@@ -6,6 +7,11 @@ import Image from "next/image";
 import { BsEyeFill } from "react-icons/bs";
 
 const MyBookingsPage= async() => {
+    
+  const {token} = await auth.api.getToken({
+    headers: await headers()
+  })
+  console.log(token)
     const session = await authClient.getSession({
     fetchOptions:{
       headers: await headers()
