@@ -1,6 +1,7 @@
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb'); 
 const express = require('express');
 const cors = require('cors');
+const { jwtVerify, createRemoteJWKSet } = require('jose-cjs');
 const app = express();
 const port = process.env.PORT || 5000; 
 require('dotenv').config();
@@ -18,6 +19,28 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
+  const JWKS = createRemoteJWKSet(
+      new URL('http://localhost:3000/api/auth/jwks')
+  )
+const verifyToken =async (req, res, next) => {
+  const header = req.headers.authorization;
+  if(!header || !header.startsWith('Bearer ')){
+    return res.$status(401).send({ error: true, message: 'unauthorized access' });
+    }
+ const token = header.split('')[1]
+ if(!token){
+  return res.status(401).send({ error: true, message: 'unauthorized access' });
+ }
+ try{
+   const { payload } = await jwtVerify(token, JWKS, {})
+   console.log(payload)
+   next();
+ }
+ catch(err){
+  return res.status(401).send({ error: true, message: 'unauthorized access' });
+ }
+}
+
  async function runStableAPIConnect() {
   try {
     // Connect the client to the server (optional starting in v4.7)
@@ -36,7 +59,11 @@ const client = new MongoClient(uri, {
       const result = await cursor.toArray();
       res.send(result);
     });
-    app.get('/destination/:id',async (req,res) => {
+    app.get('/destination/:id',(req,res,next) => {
+      const header = req.headers.authorization;
+      console.log('header', header);
+      next();
+    }, async (req,res) => {
       const id = req.params.id;
       console.log('getting specific destination', id);
       const query = {_id: new ObjectId(id)};
@@ -72,6 +99,12 @@ const client = new MongoClient(uri, {
     app.get('/booking', async(req,res) => {
       const result = await bookingCollection.find().toArray()
       res.send(result)
+    })
+    app.delete('/booking/:id', async(req,res) => {
+      const {id} = req.params;
+      const result = await bookingCollection.deleteOne({_id: new ObjectId(id)});
+      res.json(result)
+
     })
     // app.get('/', (req, res) => {
     //     res.send('Wanderlust server is running');
