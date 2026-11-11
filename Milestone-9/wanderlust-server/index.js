@@ -20,18 +20,18 @@ const client = new MongoClient(uri, {
   },
 });
   const JWKS = createRemoteJWKSet(
-      new URL('http://localhost:3000/api/auth/jwks')
+      new URL(`${process.env.CLIENT_URL}/api/auth/jwks`)
   )
 const verifyToken =async (req, res, next) => {
   const header = req.headers.authorization;
   if(!header || !header.startsWith('Bearer ')){
-    return res.$status(401).send({ error: true, message: 'unauthorized access' });
+    return res.status(401).send({ error: true, message: 'unauthorized access' });
     }
- const token = header.split('')[1]
+ const token = header.split(' ')[1]
  if(!token){
   return res.status(401).send({ error: true, message: 'unauthorized access' });
  }
- try{
+ try{ 
    const { payload } = await jwtVerify(token, JWKS, {})
    console.log(payload)
    next();
@@ -44,7 +44,7 @@ const verifyToken =async (req, res, next) => {
  async function runStableAPIConnect() {
   try {
     // Connect the client to the server (optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
     const db = client.db('wanderlust');
     const destinationsCollection = db.collection('destinations');
     const bookingCollection = db.collection('bookings');
@@ -59,11 +59,12 @@ const verifyToken =async (req, res, next) => {
       const result = await cursor.toArray();
       res.send(result);
     });
-    app.get('/destination/:id',(req,res,next) => {
-      const header = req.headers.authorization;
-      console.log('header', header);
-      next();
-    }, async (req,res) => {
+    // app.get('/destination/:id',(req,res,next) => {
+    //   const header = req.headers.authorization;
+    //   console.log('header', header);
+    //   next();
+    // }, 
+     app.get('/destination/:id',verifyToken,async (req,res) => {
       const id = req.params.id;
       console.log('getting specific destination', id);
       const query = {_id: new ObjectId(id)};
@@ -71,11 +72,12 @@ const verifyToken =async (req, res, next) => {
       res.send(destination);
       
     })
+    
     // app.patch('/destination/:id', async (req, res) => {
     //   const id = req.params.id;
     //   const updatedDestination = req.body;  
     // })
-    app.patch('/destination/:id', async(req,res) => {
+    app.patch('/destination/:id',verifyToken, async(req,res) => {
       const id = req.params.id;
       const updatedData = req.body;
       const result =await destinationsCollection.updateOne(
@@ -84,33 +86,32 @@ const verifyToken =async (req, res, next) => {
       )
      res.json(result)  
     })
-    app.delete('/destination/:id', async(req,res) => {
+    app.delete('/destination/:id',verifyToken, async(req,res) => {
       const {id} = req.params;
       const result = await destinationsCollection.deleteOne({_id: new ObjectId(id)});
       console.log(result, "this is result")
       res.json(result)
     })
-    app.post('/booking', async(req,res) => {
+    app.post('/booking',verifyToken, async(req,res) => {
       const bookingData = req.body;
-      const result = bookingCollection.insertOne(bookingData);
+      const result =await bookingCollection.insertOne(bookingData);
       console.log(result)
       res.json(result)
     })
-    app.get('/booking', async(req,res) => {
+    app.get('/booking',verifyToken, async(req,res) => {
       const result = await bookingCollection.find().toArray()
       res.send(result)
     })
-    app.delete('/booking/:id', async(req,res) => {
+    app.delete('/booking/:id',verifyToken, async(req,res) => {
       const {id} = req.params;
       const result = await bookingCollection.deleteOne({_id: new ObjectId(id)});
       res.json(result)
-
     })
-    // app.get('/', (req, res) => {
-    //     res.send('Wanderlust server is running');
-    // });
+    app.get('/', (req, res) => {
+        res.send('Wanderlust server is running');
+    });
     // Send a ping to confirm a successful connection
-    const result = await client.db('admin').command({ ping: 1 });
+    // const result = await client.db('admin').command({ ping: 1 });
     console.log(
       'Pinged your deployment. You successfully connected to MongoDB!'
     );
