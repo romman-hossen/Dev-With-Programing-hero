@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Input,
@@ -17,12 +18,14 @@ export function UpdateDestination({destination}) {
     const {destinationName,country,_id,price,duration,imageUrl,category,departureDate,description} = destination;
     const handleDestination = async (e) => { 
       e.preventDefault();
+      const {data:tokenData} = await authClient.token() 
       const destination = Object.fromEntries(new FormData(e.target).entries());
       console.log(destination);
-      const res = await fetch(`http://localhost:5000/destination/${_id}`, {
+      const res = await fetch(`${process.env.SERVER_URL}/destination/${_id}`, {
         method: "PATCH",
         headers:{
           "content-type": "application/json",
+          authorization: `Bearer ${tokenData?.token}`
         },
         body: JSON.stringify(destination)
 

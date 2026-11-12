@@ -2,7 +2,8 @@ import BackBtn from "@/components/BackBtn";
 import BookingCard from "@/components/BookingCard";
 import { DeleteDestination } from "@/components/DeleteDestination";
 import { UpdateDestination } from "@/components/UpdateDestination";
-import { Button, Card } from "@heroui/react";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
 
 import { CiCalendarDate } from "react-icons/ci";
@@ -10,8 +11,16 @@ import { IoLocationOutline } from "react-icons/io5";
 
 const DestinationDetailsPage = async ({ params }) => {
   // console.log("This is destination details page",params)
+  const {token} = await auth.api.getToken({
+    headers: await headers()
+  })
+  console.log(token,'this is token')
   const { id } = await params;
-  const res = await fetch(`http://localhost:5000/destination/${id}`);
+  const res = await fetch(`${process.env.SERVER_URL}/destination/${id}`,{
+    headers:{
+      authorization:`Bearer ${token}`
+    }                                  
+  });
   const destination = await res.json();
   console.log("This is destination details page", destination);
   return (
@@ -27,8 +36,8 @@ const DestinationDetailsPage = async ({ params }) => {
       <div className="min-w-5xl aspect-video relative">
         <Image
           fill
-          src={destination?.imageUrl}
-          alt={destination?.destinationName}
+          src={destination?.imageUrl || "/images/placeholder.jpg"}
+          alt={destination?.destinationName || "Destination Image"}
           className="min-w-full  object-cover"
         />
       </div>

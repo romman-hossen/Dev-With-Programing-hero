@@ -3,8 +3,6 @@ import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { use } from "react";
-import { FaRegUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { data: session } = authClient.useSession();

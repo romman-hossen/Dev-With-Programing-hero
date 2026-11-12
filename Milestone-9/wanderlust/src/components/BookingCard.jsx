@@ -5,12 +5,19 @@ import { Card } from "@heroui/react";
 import { useState } from "react";
 
 const BookingCard = ({destination}) => {
+    const [departureDate,setDepartureDate] = useState(null);
+       if(!destination) {
+        return <div>Loading...</div>
+    }   
     const { data: session} = authClient.useSession();
     const user = session?.user;
+    console.log(session,"this is session")
     const {price,_id,destinationName,imageUrl,country} = destination;
     // console.log(user.id)
     // console.log(_id, user)
-    const [departureDate,setDepartureDate] = useState(null); 
+
+
+  
     const handleBooking =async () => {
         const bookingData = {
             userId: user.id,
@@ -23,7 +30,7 @@ const BookingCard = ({destination}) => {
             country,
             departureDate: new Date(departureDate)
         }
-        const res = await fetch('http://localhost:5000/booking',{
+        const res = await fetch(`${process.env.SERVER_URL}/booking`,{
             method: "POST",
             headers: {
                 'content-type' : 'application/json'

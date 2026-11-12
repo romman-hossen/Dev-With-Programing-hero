@@ -17,7 +17,11 @@ const MyBookingsPage= async() => {
       headers: await headers()
     }
 })
-const res = await fetch('http://localhost:5000/booking');
+const res = await fetch(`${process.env.SERVER_URL}/booking`,{
+  headers:{
+    authorization:`Bearer ${token}`
+  }
+});
 const bookings = await res.json()
 // const {destinationName,imageUrl,price,departureDate} = data;  
     return (

@@ -1,13 +1,16 @@
 'use client'
+import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
 import { IoTrashBinOutline } from "react-icons/io5";
 
 const BookingDeleteAlert = ({bookingId}) => {
     const handleDeleteBooking = async() =>{
-        const res = await fetch(`http://localhost:5000/booking/${bookingId}`,{
+      const {data:tokenData} = await authClient.token(); 
+        const res = await fetch(`${process.env.SERVER_URL}/booking/${bookingId}`,{
             method:"DELETE",
             headers:{
-                "content-type" : "application/json"
+                "content-type" : "application/json",
+                authorization:`Bearer ${tokenData?.token}`
             }
         } )
         const data = res.json(); 
@@ -48,5 +51,4 @@ const BookingDeleteAlert = ({bookingId}) => {
     </AlertDialog>
     );
 };
-
 export default BookingDeleteAlert;

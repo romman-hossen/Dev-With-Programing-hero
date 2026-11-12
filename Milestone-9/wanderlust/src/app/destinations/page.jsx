@@ -1,7 +1,19 @@
 import DestinationCard from "@/components/DestinationCard";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const DestinationsPage = async () => {
-    const res = await fetch('http://localhost:5000/destination');
+    const {token} = await auth.api.getToken({
+        headers: await headers()
+  }
+    );
+    console.log(token, "this is token");
+    const res = await fetch(`${process.env.SERVER_URL}/destination`,{
+        headers:{
+            authorization:`Bearer ${token}`
+        }
+    }
+    );
     console.log(res);
 
     const destinations = await res.json();
@@ -20,5 +32,4 @@ const DestinationsPage = async () => {
         </div>
     );
 };
-
 export default DestinationsPage;
